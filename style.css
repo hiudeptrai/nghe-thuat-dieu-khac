@@ -1,0 +1,258 @@
+/* --- BIẾN MÀU SẮC (Đỏ, Be, Nâu, Terracotta) --- */
+:root {
+    --primary-red: #8B263E;       /* Đỏ rượu vang / Đỏ trầm */
+    --accent-red: #A83248;        /* Đỏ sáng hơn cho hover */
+    --terracotta: #C46244;        /* Màu gạch nung / Cam đất */
+    --earth-brown: #5C3A21;       /* Nâu đất đậm */
+    --light-brown: #8D6346;       /* Nâu sáng */
+    --stone-beige: #F9F6F0;       /* Be kem nhạt nền chính */
+    --card-bg: #FFFFFF;           /* Màu nền thẻ module */
+    --text-color: #2C221E;        /* Màu chữ chính */
+    --border-color: #E6DFD5;      /* Màu đường viền */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif; /* Đổi sang Times New Roman */
+    font-size: 14pt;                              /* Đặt cỡ chữ khoảng 12 */
+    background-color: var(--stone-beige);
+    color: var(--text-color);
+    line-height: 1.6;                             /* Điều chỉnh độ giãn dòng cho dễ đọc */
+}
+
+/* --- THANH ĐIỀU HƯỚNG --- */
+.main-header {
+    background-color: var(--card-bg);
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(92, 58, 33, 0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-red);
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--earth-brown);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: var(--primary-red);
+    color: #fff;
+}
+
+.search-box input {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    outline: none;
+    font-size: 0.9rem;
+    background-color: var(--stone-beige);
+    color: var(--text-color);
+    width: 200px;
+    transition: width 0.3s ease;
+}
+
+.search-box input:focus {
+    width: 250px;
+    border-color: var(--primary-red);
+}
+
+/* --- KHUNG NỘI DUNG CHÍNH --- */
+.content-wrapper {
+    max-width: 1000px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* --- MỖI PHẦN LỚN LÀ MỘT MODULE --- */
+.module-section {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    border-left: 6px solid var(--primary-red);
+    box-shadow: 0 6px 20px rgba(92, 58, 33, 0.06);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.section-header {
+    background: linear-gradient(135deg, var(--primary-red), var(--accent-red));
+    color: #fff;
+    padding: 1.2rem 1.8rem;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+}
+
+.section-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.subsection {
+    margin-top: 0.5rem;
+    padding-top: 0.8rem;
+    border-top: 1px dashed var(--border-color);
+}
+
+.subsection h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--terracotta);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.subsection h4 {
+    color: var(--earth-brown);
+    font-size: 1.05rem;
+    margin: 0.6rem 0 0.4rem 0;
+}
+
+p {
+    text-align: justify;
+}
+
+ul {
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* --- BẢNG BIỂU --- */
+.table-responsive {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: var(--earth-brown);
+    color: #fff;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: var(--stone-beige);
+}
+
+/* --- KHUNG CHỨA ẢNH (PLACEHOLDER) --- */
+.image-placeholder {
+    background-color: var(--stone-beige);
+    border: 2px dashed var(--terracotta);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    margin: 1.5rem 0;
+    position: relative;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder img {
+    max-width: 100%;
+    max-height: 350px;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.img-caption {
+    font-style: italic;
+    color: var(--light-brown);
+    font-size: 0.9rem;
+}
+
+/* --- TIỂU KẾT --- */
+.sub-conclusion {
+    background-color: rgba(196, 98, 68, 0.08);
+    border-left: 4px solid var(--terracotta);
+    padding: 1rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+    margin-top: 1rem;
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--earth-brown);
+    color: #fff;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE CHO MOBILE --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .nav-menu {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    .search-box input {
+        width: 100%;
+    }
+}
